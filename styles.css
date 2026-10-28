@@ -57,7 +57,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem; /* compensa la barra fija al navegar por anclas */
+  scroll-padding-top: calc(4rem + var(--space-2)); /* compensa la barra fija al navegar por anclas */
 }
 
 body {
@@ -328,6 +328,14 @@ ul {
 }
 
 .card .btn {
+  margin-top: auto;
+}
+
+/* ---------- Subpágina del combo: acciones dentro de tarjetas ---------- */
+.card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
   margin-top: auto;
 }
 
