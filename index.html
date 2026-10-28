@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Victoria Sanjurjo — Desarrolladora de software independiente. Productos MVP, desarrollo a medida, aplicaciones de escritorio, web apps y micro-SaaS." />
+  <title>Victoria Sanjurjo — Desarrollo de Software</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER / NAVEGACIÓN ============ -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="#inicio" class="nav__brand">Victoria Sanjurjo</a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav__menu" id="navMenu" aria-label="Navegación principal">
+        <a href="#productos" class="nav__link">Productos</a>
+        <a href="#servicios" class="nav__link">Servicios</a>
+        <a href="#contacto" class="nav__link nav__link--cta">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <p class="hero__eyebrow">Desarrollo de software independiente</p>
+        <h1 class="hero__title">Construyo software simple, útil y listo para producción.</h1>
+        <p class="hero__subtitle">
+          Soy Victoria Sanjurjo. Diseño y desarrollo productos digitales de principio a fin:
+          desde MVPs validados hasta soluciones a medida para tu negocio.
+        </p>
+        <div class="hero__actions">
+          <a href="#productos" class="btn btn--primary">Ver productos</a>
+          <a href="#contacto" class="btn btn--ghost">Hablemos de tu proyecto</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCTOS ============ -->
+    <section class="section section--alt" id="productos">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Productos</h2>
+          <p class="section__lead">MVPs de software desarrollados por mí, listos para resolver problemas reales.</p>
+        </header>
+
+        <div class="products-grid">
+          <!-- Tarjeta 1 -->
+          <article class="card">
+            <div class="card__badge">MVP</div>
+            <h3 class="card__title">CSVCleaner</h3>
+            <p class="card__text">
+              Herramienta de escritorio para limpiar, normalizar y validar archivos CSV
+              en segundos. Ideal para preparar datos antes de importar o analizar.
+            </p>
+            <a href="#contacto" class="btn btn--primary btn--sm">Solicitar acceso</a>
+          </article>
+
+          <!-- Tarjeta 2 -->
+          <article class="card">
+            <div class="card__badge">MVP</div>
+            <h3 class="card__title">Generador de Presupuestos (FeeReport Lite)</h3>
+            <p class="card__text">
+              Crea presupuestos profesionales en minutos: plantillas limpias, cálculo
+              automático de totales y exportación lista para enviar a tus clientes.
+            </p>
+            <a href="#contacto" class="btn btn--primary btn--sm">Solicitar acceso</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICIOS ============ -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="section__title">Servicios</h2>
+          <p class="section__lead">Desarrollo a medida, enfocado en resultados y entregas claras.</p>
+        </header>
+
+        <ul class="services-list">
+          <li class="service">
+            <h3 class="service__title">Desarrollo a Medida</h3>
+            <p class="service__text">Software diseñado alrededor de tu proceso de negocio, sin plantillas genéricas.</p>
+          </li>
+          <li class="service">
+            <h3 class="service__title">Aplicaciones de Escritorio</h3>
+            <p class="service__text">Herramientas nativas rápidas y confiables para automatizar tu trabajo diario.</p>
+          </li>
+          <li class="service">
+            <h3 class="service__title">Web Apps</h3>
+            <p class="service__text">Aplicaciones web modernas, responsivas y centradas en la experiencia del usuario.</p>
+          </li>
+          <li class="service">
+            <h3 class="service__title">Micro-SaaS</h3>
+            <p class="service__text">Producto mínimo viable de extremo a extremo: idea, construcción y lanzamiento.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="section section--alt" id="contacto">
+      <div class="container contact">
+        <h2 class="section__title">¿Tienes un proyecto en mente?</h2>
+        <p class="section__lead">Escríbeme y conversamos sobre cómo darle forma a tu idea.</p>
+        <a href="mailto:hola@victoriasanjurjo.com" class="btn btn--primary">hola@victoriasanjurjo.com</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__copy">© <span id="year">2026</span> Victoria Sanjurjo</span>
+      <nav class="footer__links" aria-label="Enlaces de contacto">
+        <a href="mailto:hola@victoriasanjurjo.com" class="footer__link">Correo</a>
+        <a href="https://github.com" class="footer__link" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com" class="footer__link" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
