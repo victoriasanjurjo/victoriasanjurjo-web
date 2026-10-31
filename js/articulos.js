@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const desc = normalizarTexto(articulo.getAttribute("data-descripcion") || "");
 
       const coincideCategoria =
-        categoriaActual === "todas" || cat === categoriaActual;
+        categoriaActual === "todas" || cat === categoriaActual || (cat && cat.split(" ").includes(categoriaActual));
 
       const coincideBusqueda =
         query === "" || titulo.includes(query) || desc.includes(query);
