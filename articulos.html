@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Artículos y Guías • Vicky • Tecnología sin miedo</title>
+    <meta
+      name="description"
+      content="Aquí se reúnen todos los artículos del sitio, investiga el que quieras. Guías claras y paso a paso sobre celular, homebanking, computadoras, Wi-Fi y WhatsApp."
+    />
+    <meta name="author" content="Vicky" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#FAF6EE" />
+
+    <link rel="canonical" href="https://aprender-con-vicky.vercel.app/articulos.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:url" content="https://aprender-con-vicky.vercel.app/articulos.html" />
+    <meta property="og:site_name" content="Vicky • Tecnología sin miedo" />
+    <meta property="og:title" content="Artículos y Guías • Vicky • Tecnología sin miedo" />
+    <meta
+      property="og:description"
+      content="Aquí se reúnen todos los artículos del sitio, investiga el que quieras. Guías paso a paso y sin complicaciones."
+    />
+    <meta property="og:image" content="https://aprender-con-vicky.vercel.app/assets/og-image.jpg" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tipografía Inter y Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              arena: {
+                50: "#FDFCF9",
+                100: "#FAF6EE",
+                200: "#F4EFE4",
+                300: "#EAE1D2",
+                400: "#D9CDB9",
+              },
+              marron: {
+                800: "#3D3128",
+                700: "#4D3F35",
+                600: "#655447",
+                500: "#7E6B5D",
+              },
+              bosque: {
+                50: "#F2F7F4",
+                100: "#E2ECE5",
+                200: "#C7D9CE",
+                600: "#3D6F55",
+                700: "#2E5A44",
+                800: "#234434",
+              },
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', "sans-serif"],
+              serif: ['"Source Serif 4"', "Georgia", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      ::selection {
+        background-color: #c7d9ce;
+        color: #234434;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#FAF6EE] text-[#4D3F35] font-sans antialiased min-h-screen flex flex-col selection:bg-bosque-200"
+  >
+    <!-- Barra superior unificada -->
+    <header
+      class="w-full border-b border-[#EAE1D2] bg-[#FAF6EE]/90 sticky top-0 z-20 backdrop-blur-sm"
+    >
+      <div
+        class="max-w-4xl mx-auto px-5 py-4 flex items-center justify-between"
+      >
+        <a href="index.html" class="flex items-center gap-2.5 group">
+          <span
+            class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-bosque-100 text-bosque-700 group-hover:bg-bosque-200 transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"
+              />
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+            </svg>
+          </span>
+          <span class="font-bold text-lg text-marron-800 tracking-tight"
+            >Vicky
+            <span class="font-normal text-marron-600"
+              >• Tecnología sin miedo</span
+            ></span
+          >
+        </a>
+
+        <div class="flex items-center gap-3">
+          <a
+            href="index.html"
+            class="text-sm font-medium text-marron-600 hover:text-marron-800 px-3 py-1.5 transition-colors hidden sm:inline-block"
+          >
+            Inicio
+          </a>
+          <a
+            href="index.html#contacto"
+            class="text-sm font-semibold text-bosque-700 hover:text-bosque-800 bg-bosque-100/70 hover:bg-bosque-100 px-3.5 py-1.5 rounded-full transition-colors"
+          >
+            Pedir una mano
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="flex-grow w-full max-w-4xl mx-auto px-5 py-10 md:py-14">
+      <!-- Encabezado de la página -->
+      <div class="mb-10 text-center sm:text-left">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-bosque-100 text-bosque-700 text-xs font-semibold tracking-wide uppercase mb-4"
+        >
+          <span>📖</span> Biblioteca de guías prácticas
+        </div>
+
+        <h1
+          class="text-3xl sm:text-4xl md:text-5xl font-serif text-marron-800 font-semibold tracking-tight mb-4"
+        >
+          Artículos
+        </h1>
+
+        <p class="text-base sm:text-lg text-marron-600 max-w-2xl leading-relaxed">
+          Aquí se reúnen todos los artículos del sitio, investiga el que quieras.
+        </p>
+      </div>
+
+      <!-- Barra de búsqueda y menú de filtros por categoría -->
+      <section
+        class="bg-[#FDFCF9] border border-[#EAE1D2] rounded-2xl p-4 sm:p-5 shadow-sm mb-10"
+        aria-label="Búsqueda y filtros de artículos"
+      >
+        <div class="flex flex-col sm:flex-row gap-3 items-stretch">
+          <!-- Barra de búsqueda -->
+          <div class="relative flex-grow">
+            <span
+              class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-marron-500"
+              aria-hidden="true"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </span>
+            <input
+              type="text"
+              id="buscadorArticulos"
+              placeholder="Buscar por tema, palabra clave o duda..."
+              class="w-full bg-[#FAF6EE] border border-[#D9CDB9] rounded-xl pl-10 pr-4 py-3 text-sm sm:text-base text-marron-800 placeholder-marron-500/60 focus:outline-none focus:ring-2 focus:ring-bosque-700 focus:bg-white transition-all"
+              aria-label="Buscar artículos"
+            />
+          </div>
+
+          <!-- Menú de filtros por categoría -->
+          <div class="sm:w-60 flex-shrink-0">
+            <label for="filtroCategoria" class="sr-only">Filtrar por categoría</label>
+            <div class="relative">
+              <select
+                id="filtroCategoria"
+                class="w-full appearance-none bg-[#FAF6EE] border border-[#D9CDB9] rounded-xl pl-4 pr-10 py-3 text-sm sm:text-base font-medium text-marron-800 focus:outline-none focus:ring-2 focus:ring-bosque-700 focus:bg-white transition-all cursor-pointer"
+                aria-label="Seleccionar categoría"
+              >
+                <option value="todas">Todas las categorías</option>
+                <option value="celular">Celular</option>
+                <option value="homebanking">Homebanking</option>
+                <option value="computadora">Computadora</option>
+                <option value="red-wifi">Red Wi-Fi</option>
+                <option value="whatsapp">Whatsapp</option>
+              </select>
+              <span
+                class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-marron-600"
+                aria-hidden="true"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pastillas de acceso rápido a categorías -->
+        <div class="flex flex-wrap gap-2 mt-4 pt-3 border-t border-[#EAE1D2]">
+          <span class="text-xs font-semibold text-marron-500 self-center mr-1">Filtrar:</span>
+          <button
+            type="button"
+            data-cat="todas"
+            class="pill-cat px-3 py-1 rounded-full text-xs font-medium bg-bosque-700 text-white transition-all cursor-pointer"
+          >
+            Todas
+          </button>
+          <button
+            type="button"
+            data-cat="celular"
+            class="pill-cat px-3 py-1 rounded-full text-xs font-medium bg-arena-200 text-marron-700 hover:bg-bosque-100 transition-all cursor-pointer"
+          >
+            📱 Celular
+          </button>
+          <button
+            type="button"
+            data-cat="homebanking"
+            class="pill-cat px-3 py-1 rounded-full text-xs font-medium bg-arena-200 text-marron-700 hover:bg-bosque-100 transition-all cursor-pointer"
+          >
+            🏦 Homebanking
+          </button>
+          <button
+            type="button"
+            data-cat="computadora"
+            class="pill-cat px-3 py-1 rounded-full text-xs font-medium bg-arena-200 text-marron-700 hover:bg-bosque-100 transition-all cursor-pointer"
+          >
+            💻 Computadora
+          </button>
+          <button
+            type="button"
+            data-cat="red-wifi"
+            class="pill-cat px-3 py-1 rounded-full text-xs font-medium bg-arena-200 text-marron-700 hover:bg-bosque-100 transition-all cursor-pointer"
+          >
+            📶 Red Wi-Fi
+          </button>
+          <button
+            type="button"
+            data-cat="whatsapp"
+            class="pill-cat px-3 py-1 rounded-full text-xs font-medium bg-arena-200 text-marron-700 hover:bg-bosque-100 transition-all cursor-pointer"
+          >
+            💬 Whatsapp
+          </button>
+        </div>
+      </section>
+
+      <!-- Contador de resultados -->
+      <div class="flex items-center justify-between mb-6 px-1">
+        <p id="contadorResultados" class="text-sm text-marron-600">
+          Mostrando artículos disponibles
+        </p>
+      </div>
+
+      <!-- Cuadrícula de artículos -->
+      <div
+        id="grillaArticulos"
+        class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14"
+      >
+        <!-- Artículo: Celular -->
+        <article
+          class="tarjeta-articulo bg-[#FDFCF9] border border-[#EAE1D2] rounded-2xl p-6 flex flex-col justify-between hover:shadow-md hover:border-bosque-600/50 transition-all group"
+          data-categoria="celular"
+          data-titulo="Cómo liberar espacio en el celular sin borrar recuerdos ni fotos queridas"
+          data-descripcion="Aprende a identificar qué cosas ocupan espacio innecesario como descargas y caché, manteniendo tus fotos y conversaciones a salvo."
+        >
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span
+                class="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-arena-200 text-marron-700"
+              >
+                📱 Celular
+              </span>
+              <span class="text-xs text-marron-500">Lectura de 5 min</span>
+            </div>
+            <h2
+              class="font-serif text-xl font-semibold text-marron-800 mb-2 group-hover:text-bosque-700 transition-colors"
+            >
+              Cómo liberar espacio en el celular sin borrar recuerdos ni fotos queridas
+            </h2>
+            <p class="text-sm text-marron-600 leading-relaxed mb-4">
+              Aprende a identificar qué cosas ocupan espacio innecesario como descargas y caché, manteniendo tus fotos y conversaciones a salvo.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-[#EAE1D2] flex items-center justify-between text-xs">
+            <span class="text-marron-500">Paso a paso con capturas</span>
+            <span class="font-semibold text-bosque-700 group-hover:underline">Leer guía →</span>
+          </div>
+        </article>
+
+        <!-- Artículo: Homebanking -->
+        <article
+          class="tarjeta-articulo bg-[#FDFCF9] border border-[#EAE1D2] rounded-2xl p-6 flex flex-col justify-between hover:shadow-md hover:border-bosque-600/50 transition-all group"
+          data-categoria="homebanking"
+          data-titulo="Primeros pasos en el Homebanking: claves para operar con total tranquilidad"
+          data-descripcion="Consejos simples para ingresar seguro a tu banco, transferir sin errores y reconocer intentos de estafa por teléfono o correo."
+        >
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span
+                class="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-arena-200 text-marron-700"
+              >
+                🏦 Homebanking
+              </span>
+              <span class="text-xs text-marron-500">Lectura de 7 min</span>
+            </div>
+            <h2
+              class="font-serif text-xl font-semibold text-marron-800 mb-2 group-hover:text-bosque-700 transition-colors"
+            >
+              Primeros pasos en el Homebanking: claves para operar con total tranquilidad
+            </h2>
+            <p class="text-sm text-marron-600 leading-relaxed mb-4">
+              Consejos simples para ingresar seguro a tu banco, transferir sin errores y reconocer intentos de estafa por teléfono o correo.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-[#EAE1D2] flex items-center justify-between text-xs">
+            <span class="text-marron-500">Seguridad y confianza</span>
+            <span class="font-semibold text-bosque-700 group-hover:underline">Leer guía →</span>
+          </div>
+        </article>
+
+        <!-- Artículo: Computadora -->
+        <article
+          class="tarjeta-articulo bg-[#FDFCF9] border border-[#EAE1D2] rounded-2xl p-6 flex flex-col justify-between hover:shadow-md hover:border-bosque-600/50 transition-all group"
+          data-categoria="computadora"
+          data-titulo="Cómo ordenar tus archivos y carpetas en la computadora para encontrar todo al instante"
+          data-descripcion="Un método fácil y claro para organizar fotos, boletas y documentos en tu computadora sin que sea una tarea interminable."
+        >
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span
+                class="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-arena-200 text-marron-700"
+              >
+                💻 Computadora
+              </span>
+              <span class="text-xs text-marron-500">Lectura de 6 min</span>
+            </div>
+            <h2
+              class="font-serif text-xl font-semibold text-marron-800 mb-2 group-hover:text-bosque-700 transition-colors"
+            >
+              Cómo ordenar tus archivos y carpetas en la computadora para encontrar todo al instante
+            </h2>
+            <p class="text-sm text-marron-600 leading-relaxed mb-4">
+              Un método fácil y claro para organizar fotos, boletas y documentos en tu computadora sin que sea una tarea interminable.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-[#EAE1D2] flex items-center justify-between text-xs">
+            <span class="text-marron-500">Organización práctica</span>
+            <span class="font-semibold text-bosque-700 group-hover:underline">Leer guía →</span>
+          </div>
+        </article>
+
+        <!-- Artículo: Red Wi-Fi -->
+        <article
+          class="tarjeta-articulo bg-[#FDFCF9] border border-[#EAE1D2] rounded-2xl p-6 flex flex-col justify-between hover:shadow-md hover:border-bosque-600/50 transition-all group"
+          data-categoria="red-wifi"
+          data-titulo="Qué hacer cuando la Red Wi-Fi se desconecta o anda muy lenta en casa"
+          data-descripcion="Comprobaciones sencillas para reiniciar el router, saber si estás conectado correctamente y mejorar la señal en las habitaciones."
+        >
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span
+                class="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-arena-200 text-marron-700"
+              >
+                📶 Red Wi-Fi
+              </span>
+              <span class="text-xs text-marron-500">Lectura de 4 min</span>
+            </div>
+            <h2
+              class="font-serif text-xl font-semibold text-marron-800 mb-2 group-hover:text-bosque-700 transition-colors"
+            >
+              Qué hacer cuando la Red Wi-Fi se desconecta o anda muy lenta en casa
+            </h2>
+            <p class="text-sm text-marron-600 leading-relaxed mb-4">
+              Comprobaciones sencillas para reiniciar el router, saber si estás conectado correctamente y mejorar la señal en las habitaciones.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-[#EAE1D2] flex items-center justify-between text-xs">
+            <span class="text-marron-500">Solución de problemas</span>
+            <span class="font-semibold text-bosque-700 group-hover:underline">Leer guía →</span>
+          </div>
+        </article>
+
+        <!-- Artículo: Whatsapp -->
+        <article
+          class="tarjeta-articulo bg-[#FDFCF9] border border-[#EAE1D2] rounded-2xl p-6 flex flex-col justify-between hover:shadow-md hover:border-bosque-600/50 transition-all group"
+          data-categoria="whatsapp"
+          data-titulo="Guía completa de Whatsapp: videollamadas, audios y cómo silenciar grupos molestos"
+          data-descripcion="Domina las funciones más útiles de Whatsapp para comunicarte con tus seres queridos cómodamente y sin notificaciones estresantes."
+        >
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span
+                class="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-arena-200 text-marron-700"
+              >
+                💬 Whatsapp
+              </span>
+              <span class="text-xs text-marron-500">Lectura de 5 min</span>
+            </div>
+            <h2
+              class="font-serif text-xl font-semibold text-marron-800 mb-2 group-hover:text-bosque-700 transition-colors"
+            >
+              Guía completa de Whatsapp: videollamadas, audios y cómo silenciar grupos molestos
+            </h2>
+            <p class="text-sm text-marron-600 leading-relaxed mb-4">
+              Domina las funciones más útiles de Whatsapp para comunicarte con tus seres queridos cómodamente y sin notificaciones estresantes.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-[#EAE1D2] flex items-center justify-between text-xs">
+            <span class="text-marron-500">Uso diario sin estrés</span>
+            <span class="font-semibold text-bosque-700 group-hover:underline">Leer guía →</span>
+          </div>
+        </article>
+
+        <!-- Artículo adicional: Celular -->
+        <article
+          class="tarjeta-articulo bg-[#FDFCF9] border border-[#EAE1D2] rounded-2xl p-6 flex flex-col justify-between hover:shadow-md hover:border-bosque-600/50 transition-all group"
+          data-categoria="celular"
+          data-titulo="Letra grande y pantalla cómoda: cómo adaptar tu celular para leer mejor"
+          data-descripcion="Ajusta el tamaño del texto, el brillo y el contraste de tu teléfono para que no te canse la vista al leer mensajes."
+        >
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span
+                class="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-arena-200 text-marron-700"
+              >
+                📱 Celular
+              </span>
+              <span class="text-xs text-marron-500">Lectura de 3 min</span>
+            </div>
+            <h2
+              class="font-serif text-xl font-semibold text-marron-800 mb-2 group-hover:text-bosque-700 transition-colors"
+            >
+              Letra grande y pantalla cómoda: cómo adaptar tu celular para leer mejor
+            </h2>
+            <p class="text-sm text-marron-600 leading-relaxed mb-4">
+              Ajusta el tamaño del texto, el brillo y el contraste de tu teléfono para que no te canse la vista al leer mensajes.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-[#EAE1D2] flex items-center justify-between text-xs">
+            <span class="text-marron-500">Accesibilidad y confort</span>
+            <span class="font-semibold text-bosque-700 group-hover:underline">Leer guía →</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Estado vacío (cuando no hay coincidencias) -->
+      <div
+        id="estadoVacio"
+        class="hidden text-center py-14 px-6 bg-[#FDFCF9] border border-[#EAE1D2] rounded-3xl"
+      >
+        <span class="text-4xl block mb-3">🔍</span>
+        <h3 class="text-lg font-bold text-marron-800 mb-1">
+          No encontramos artículos con esa búsqueda
+        </h3>
+        <p class="text-sm text-marron-600 max-w-md mx-auto mb-5">
+          Intenta con otra palabra o revisa otra categoría. También puedes escribirme si te gustaría que arme una guía sobre este tema.
+        </p>
+        <button
+          type="button"
+          id="btnLimpiarFiltros"
+          class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-bosque-100 text-bosque-700 text-sm font-semibold hover:bg-bosque-200 transition-colors cursor-pointer"
+        >
+          Limpiar búsqueda y filtros
+        </button>
+      </div>
+
+      <!-- Llamado al pie para pedir temas -->
+      <div
+        class="mt-14 bg-bosque-50 border border-bosque-200 rounded-3xl p-7 md:p-9 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6"
+      >
+        <div>
+          <h2 class="text-xl sm:text-2xl font-serif font-semibold text-bosque-800 mb-1">
+            ¿No encontrás lo que necesitás?
+          </h2>
+          <p class="text-sm sm:text-base text-marron-700 max-w-xl">
+            Escribime contándome qué tema te gustaría aprender y armo una guía explicada paso a paso especialmente para vos.
+          </p>
+        </div>
+        <a
+          href="index.html#contacto"
+          class="flex-shrink-0 inline-flex items-center justify-center px-6 py-3 rounded-xl bg-bosque-700 hover:bg-bosque-800 text-white font-semibold text-sm shadow-sm transition-all"
+        >
+          Proponer un tema
+        </a>
+      </div>
+    </main>
+
+    <!-- Pie de página unificado -->
+    <footer
+      class="w-full border-t border-[#EAE1D2] py-8 mt-auto text-center text-xs text-marron-500 bg-[#FAF6EE]"
+    >
+      <div class="max-w-4xl mx-auto px-5 space-y-1">
+        <p class="font-medium text-marron-700">
+          Espacio de educación y acompañamiento digital • Hecho en Argentina con paciencia
+        </p>
+        <p>Sin fines de lucro. 100% libre y gratuito.</p>
+      </div>
+    </footer>
+
+    <!-- Lógica de filtrado y búsqueda interactiva -->
+    <script>
+      (function () {
+        const buscador = document.getElementById("buscadorArticulos");
+        const filtroSelect = document.getElementById("filtroCategoria");
+        const pills = document.querySelectorAll(".pill-cat");
+        const articulos = document.querySelectorAll(".tarjeta-articulo");
+        const grilla = document.getElementById("grillaArticulos");
+        const estadoVacio = document.getElementById("estadoVacio");
+        const contador = document.getElementById("contadorResultados");
+        const btnLimpiar = document.getElementById("btnLimpiarFiltros");
+
+        let categoriaActual = "todas";
+        let textoBusqueda = "";
+
+        function normalizarTexto(texto) {
+          return texto
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+        }
+
+        function aplicarFiltros() {
+          let visibles = 0;
+          const query = normalizarTexto(textoBusqueda.trim());
+
+          articulos.forEach((articulo) => {
+            const cat = articulo.getAttribute("data-categoria");
+            const titulo = normalizarTexto(articulo.getAttribute("data-titulo") || "");
+            const desc = normalizarTexto(articulo.getAttribute("data-descripcion") || "");
+
+            const coincideCategoria =
+              categoriaActual === "todas" || cat === categoriaActual;
+
+            const coincideBusqueda =
+              query === "" || titulo.includes(query) || desc.includes(query);
+
+            if (coincideCategoria && coincideBusqueda) {
+              articulo.classList.remove("hidden");
+              visibles++;
+            } else {
+              articulo.classList.add("hidden");
+            }
+          });
+
+          // Actualizar contador y estado vacío
+          if (visibles === 0) {
+            grilla.classList.add("hidden");
+            estadoVacio.classList.remove("hidden");
+            contador.textContent = "No hay resultados para esta búsqueda";
+          } else {
+            grilla.classList.remove("hidden");
+            estadoVacio.classList.remove("hidden");
+            estadoVacio.classList.add("hidden");
+            contador.textContent = `Mostrando ${visibles} artículo${visibles === 1 ? "" : "s"}`;
+          }
+
+          // Sincronizar pastillas visuales
+          pills.forEach((pill) => {
+            if (pill.getAttribute("data-cat") === categoriaActual) {
+              pill.classList.remove("bg-arena-200", "text-marron-700");
+              pill.classList.add("bg-bosque-700", "text-white");
+            } else {
+              pill.classList.remove("bg-bosque-700", "text-white");
+              pill.classList.add("bg-arena-200", "text-marron-700");
+            }
+          });
+
+          // Sincronizar select
+          if (filtroSelect.value !== categoriaActual) {
+            filtroSelect.value = categoriaActual;
+          }
+        }
+
+        // Eventos
+        buscador.addEventListener("input", function (e) {
+          textoBusqueda = e.target.value;
+          aplicarFiltros();
+        });
+
+        filtroSelect.addEventListener("change", function (e) {
+          categoriaActual = e.target.value;
+          aplicarFiltros();
+        });
+
+        pills.forEach((pill) => {
+          pill.addEventListener("click", function () {
+            categoriaActual = this.getAttribute("data-cat");
+            aplicarFiltros();
+          });
+        });
+
+        btnLimpiar.addEventListener("click", function () {
+          textoBusqueda = "";
+          categoriaActual = "todas";
+          buscador.value = "";
+          filtroSelect.value = "todas";
+          aplicarFiltros();
+        });
+
+        aplicarFiltros();
+      })();
+    </script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
-# robots.txt para https://tudominio.com/
+# robots.txt para https://aprender-con-vicky.vercel.app/
 User-agent: *
 Allow: /
 
 # Declaración del Sitemap
-Sitemap: https://tudominio.com/sitemap.xml
+Sitemap: https://aprender-con-vicky.vercel.app/sitemap.xml
