@@ -1,24 +1,497 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="¿Querés aprender a programar? Un espacio para aprender programación de forma autónoma y colaborativa basada en proyectos." />
-  <title>¿Querés aprender a programar? — Victoria Sanjurjo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <main class="center-container">
-    <h1 class="intro-title">¿Querés aprender a programar?</h1>
-    <p class="intro-text">
-      Hola, soy Vicky, soy programadora y traigo este sitio a ustedes para que juntos podamos aprender sobre programación y podamos compartir nuestros conocimientos entre nosotros para nutrirnos y compartir juntos este hermoso oficio. Están más que invitados a unirse a mí en este hermoso recorrido hacia el aprendizaje autónomo, basado en proyectos y con acompañamiento personal de mi parte y de quiénes tengan ganas de ayudar a otros a transitar este camino de la programación de manera más sencilla.
-    </p>
-    <div class="actions-wrapper">
-      <a href="empieza-aqui.html" class="btn-primary">Empieza aquí</a>
-    </div>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vicky • Tecnología sin miedo</title>
+
+    <!-- Tailwind CSS para el layout base y utilidades responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tipografía Inter y Lora para máxima legibilidad y calidez editorial -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              arena: {
+                50: "#FDFCF9",
+                100: "#FAF6EE",
+                200: "#F4EFE4",
+                300: "#EAE1D2",
+                400: "#D9CDB9",
+              },
+              marron: {
+                800: "#3D3128",
+                700: "#4D3F35",
+                600: "#655447",
+                500: "#7E6B5D",
+              },
+              bosque: {
+                50: "#F2F7F4",
+                100: "#E2ECE5",
+                200: "#C7D9CE",
+                600: "#3D6F55",
+                700: "#2E5A44",
+                800: "#234434",
+              },
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', "sans-serif"],
+              serif: ['"Source Serif 4"', "Georgia", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Suavizado general y selección de color acorde a la paleta */
+      ::selection {
+        background-color: #c7d9ce;
+        color: #234434;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-[#FAF6EE] text-[#4D3F35] font-sans antialiased min-h-screen flex flex-col selection:bg-bosque-200"
+  >
+    <!-- Barra superior simple y despojada -->
+    <header
+      class="w-full border-b border-[#EAE1D2] bg-[#FAF6EE]/90 sticky top-0 z-20 backdrop-blur-sm"
+    >
+      <div
+        class="max-w-3xl mx-auto px-5 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-2.5">
+          <!-- Ícono sutil de hoja / crecimiento -->
+          <span
+            class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-bosque-100 text-bosque-700"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"
+              />
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+            </svg>
+          </span>
+          <span class="font-bold text-lg text-marron-800 tracking-tight"
+            >Vicky
+            <span class="font-normal text-marron-600"
+              >• Tecnología sin miedo</span
+            ></span
+          >
+        </div>
+
+        <a
+          href="#contacto"
+          class="text-sm font-semibold text-bosque-700 hover:text-bosque-800 bg-bosque-100/70 hover:bg-bosque-100 px-3.5 py-1.5 rounded-full transition-colors"
+        >
+          Pedir una mano
+        </a>
+      </div>
+    </header>
+
+    <!-- Contenedor central -->
+    <main class="flex-grow w-full max-w-3xl mx-auto px-5 py-10 md:py-14">
+      <!-- Carta de bienvenida de Vicky -->
+      <article
+        class="bg-[#FDFCF9] border border-[#EAE1D2] rounded-3xl p-7 md:p-12 shadow-sm mb-12"
+      >
+        <!-- Insignia de bienvenida -->
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-bosque-100 text-bosque-700 text-xs font-semibold tracking-wide uppercase mb-6"
+        >
+          <span>🌱</span> Espacio comunitario y gratuito
+        </div>
+
+        <h1
+          class="text-2xl sm:text-3xl md:text-4xl font-serif text-marron-800 font-semibold leading-tight mb-8"
+        >
+          ¡Hola! Soy Vicky,
+          <span
+            class="block text-xl sm:text-2xl font-sans font-normal text-marron-600 mt-2"
+          >
+            una joven argentina que siente la necesidad de ayudar a otros a
+            aprender cómo usar la tecnología.
+          </span>
+        </h1>
+
+        <!-- Cuerpo del mensaje -->
+        <div
+          class="space-y-6 text-base sm:text-lg text-marron-700 leading-relaxed font-sans"
+        >
+          <p>
+            Me parece importante que en este momento donde la Inteligencia
+            Artificial y la tecnología están tan asentadas en el mundo podamos
+            acompañarnos entre nosotros para aprender juntos sobre cómo usar la
+            tecnología.
+          </p>
+
+          <p>
+            Este proyecto nace de mis ganas de compartir lo que llevo años
+            aprendiendo sobre tecnología. Mi mamá me enseñó desde muy chiquita
+            cómo usar la tecnología de manera responsable y sin miedo a romper
+            algo, y ahora quiero ser yo la que comparta esas enseñanzas.
+          </p>
+
+          <!-- Destacado cálido -->
+          <div
+            class="my-6 p-5 sm:p-6 bg-[#F4EFE4] rounded-2xl border-l-4 border-bosque-700"
+          >
+            <p class="font-medium text-marron-800">
+              Este es un espacio seguro para aprender y compartir. Nadie va a
+              juzgarte por no saber o porque te cueste entender ciertos temas.
+            </p>
+          </div>
+
+          <p>
+            Si con mi ayuda logras aprender algo nuevo o entender cómo funciona
+            algo que viene dando vueltas en tu mente, mi objetivo principal está
+            cumplido.
+          </p>
+
+          <p>
+            Te invito a acompañarme en este trayecto y a rellenar el pequeño
+            formulario a continuación para que podamos charlar, en el formato
+            que quieras, para que puedas resolver tus dudas y quizás aprender
+            algo nuevo.
+          </p>
+
+          <!-- Aclaración de gratuidad -->
+          <div class="pt-2">
+            <p
+              class="text-sm sm:text-base bg-bosque-50 border border-bosque-200 text-bosque-800 rounded-xl p-4"
+            >
+              <strong class="font-semibold block mb-1"
+                >🌿 Una aclaración muy importante:</strong
+              >
+              En este espacio no se te va a cobrar un solo peso. No pretendo
+              ganar dinero con esto porque no es la esencia del proyecto. Ante
+              cualquier circunstancia en la que alguien quiera cobrarte en
+              nombre mío o de este proyecto, me avisas enseguida y yo lo
+              resuelvo.
+            </p>
+          </div>
+
+          <p class="pt-2 font-serif italic text-marron-800 text-lg">
+            Muchas gracias por leer y espero conocerte pronto...
+          </p>
+        </div>
+      </article>
+
+      <!-- Tres principios esenciales -->
+      <section
+        class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14"
+        aria-label="Nuestros pilares"
+      >
+        <div
+          class="bg-[#FDFCF9] border border-[#EAE1D2] rounded-2xl p-5 text-center sm:text-left flex flex-col justify-between"
+        >
+          <div
+            class="w-9 h-9 rounded-full bg-arena-200 text-marron-700 flex items-center justify-center font-bold text-sm mb-3 mx-auto sm:mx-0"
+          >
+            ⏳
+          </div>
+          <div>
+            <h3 class="font-semibold text-marron-800 text-base mb-1">
+              A tu propio ritmo
+            </h3>
+            <p class="text-sm text-marron-600 leading-snug">
+              Sin apuros ni explicaciones a las corridas. Repetimos las veces
+              que haga falta.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#FDFCF9] border border-[#EAE1D2] rounded-2xl p-5 text-center sm:text-left flex flex-col justify-between"
+        >
+          <div
+            class="w-9 h-9 rounded-full bg-bosque-100 text-bosque-700 flex items-center justify-center font-bold text-sm mb-3 mx-auto sm:mx-0"
+          >
+            🛡️
+          </div>
+          <div>
+            <h3 class="font-semibold text-marron-800 text-base mb-1">
+              Sin miedo a romper
+            </h3>
+            <p class="text-sm text-marron-600 leading-snug">
+              El error es parte natural de aprender. Desarmamos el miedo
+              haciendo clic juntos.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#FDFCF9] border border-[#EAE1D2] rounded-2xl p-5 text-center sm:text-left flex flex-col justify-between"
+        >
+          <div
+            class="w-9 h-9 rounded-full bg-arena-200 text-marron-700 flex items-center justify-center font-bold text-sm mb-3 mx-auto sm:mx-0"
+          >
+            ☕
+          </div>
+          <div>
+            <h3 class="font-semibold text-marron-800 text-base mb-1">
+              De persona a persona
+            </h3>
+            <p class="text-sm text-marron-600 leading-snug">
+              100% gratuito. Del otro lado estoy yo para escucharte y ayudarte
+              con paciencia.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección de Contacto / Formulario -->
+      <section
+        id="contacto"
+        class="bg-[#FDFCF9] border border-[#EAE1D2] rounded-3xl p-7 md:p-10 shadow-sm scroll-mt-24"
+      >
+        <div class="mb-8">
+          <h2
+            class="text-2xl sm:text-3xl font-serif font-semibold text-marron-800 mb-2"
+          >
+            Charlemos: pedí una mano con tu consulta
+          </h2>
+          <p class="text-marron-600 text-base">
+            Completá este formulario corto para coordinar. Elegí el medio que te
+            resulte más cómodo y sin presiones.
+          </p>
+        </div>
+
+        <!-- Formulario -->
+        <form
+          id="formularioContacto"
+          class="space-y-6"
+          onsubmit="enviarFormulario(event)"
+        >
+          <!-- Nombre -->
+          <div>
+            <label
+              for="nombre"
+              class="block text-sm font-semibold text-marron-800 mb-1.5"
+            >
+              1. ¿Cómo te llamás?
+              <span class="text-bosque-700 font-normal"
+                >(o cómo te gusta que te digan)</span
+              >
+            </label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              required
+              placeholder="Por ejemplo: Marta o Carlos"
+              class="w-full bg-[#FAF6EE] border border-[#D9CDB9] rounded-xl px-4 py-3 text-base text-marron-800 placeholder-marron-500/60 focus:outline-none focus:ring-2 focus:ring-bosque-700 focus:bg-white transition-all"
+            />
+          </div>
+
+          <!-- Formato preferido -->
+          <div>
+            <label class="block text-sm font-semibold text-marron-800 mb-2">
+              2. ¿Por dónde preferís que hablemos?
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <label
+                class="cursor-pointer border border-[#D9CDB9] bg-[#FAF6EE] rounded-xl p-3.5 flex items-start gap-3 hover:border-bosque-600 transition-all"
+              >
+                <input
+                  type="radio"
+                  name="formato"
+                  value="videollamada"
+                  checked
+                  class="mt-1 accent-bosque-700"
+                />
+                <div>
+                  <span class="block text-sm font-medium text-marron-800"
+                    >Videollamada</span
+                  >
+                  <span class="block text-xs text-marron-500 mt-0.5"
+                    >Pantalla compartida con calma</span
+                  >
+                </div>
+              </label>
+
+              <label
+                class="cursor-pointer border border-[#D9CDB9] bg-[#FAF6EE] rounded-xl p-3.5 flex items-start gap-3 hover:border-bosque-600 transition-all"
+              >
+                <input
+                  type="radio"
+                  name="formato"
+                  value="whatsapp"
+                  class="mt-1 accent-bosque-700"
+                />
+                <div>
+                  <span class="block text-sm font-medium text-marron-800"
+                    >WhatsApp</span
+                  >
+                  <span class="block text-xs text-marron-500 mt-0.5"
+                    >Mensajes o notas de audio</span
+                  >
+                </div>
+              </label>
+
+              <label
+                class="cursor-pointer border border-[#D9CDB9] bg-[#FAF6EE] rounded-xl p-3.5 flex items-start gap-3 hover:border-bosque-600 transition-all"
+              >
+                <input
+                  type="radio"
+                  name="formato"
+                  value="email"
+                  class="mt-1 accent-bosque-700"
+                />
+                <div>
+                  <span class="block text-sm font-medium text-marron-800"
+                    >Correo electrónico</span
+                  >
+                  <span class="block text-xs text-marron-500 mt-0.5"
+                    >Respuestas paso a paso</span
+                  >
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Dato de contacto -->
+          <div>
+            <label
+              for="contacto_dato"
+              class="block text-sm font-semibold text-marron-800 mb-1.5"
+            >
+              3. Tu contacto
+              <span class="text-bosque-700 font-normal"
+                >(tu teléfono o tu correo para que pueda escribirte)</span
+              >
+            </label>
+            <input
+              type="text"
+              id="contacto_dato"
+              name="contacto_dato"
+              required
+              placeholder="Ejemplo: tu-email@gmail.com o tu número de WhatsApp"
+              class="w-full bg-[#FAF6EE] border border-[#D9CDB9] rounded-xl px-4 py-3 text-base text-marron-800 placeholder-marron-500/60 focus:outline-none focus:ring-2 focus:ring-bosque-700 focus:bg-white transition-all"
+            />
+          </div>
+
+          <!-- Consulta o duda -->
+          <div>
+            <label
+              for="consulta"
+              class="block text-sm font-semibold text-marron-800 mb-1.5"
+            >
+              4. ¿En qué te puedo dar una mano?
+            </label>
+            <textarea
+              id="consulta"
+              name="consulta"
+              rows="4"
+              required
+              placeholder="Contame con tus palabras qué te gustaría aprender o qué tema te viene costando (guardar fotos, usar una app del banco, entender qué es la IA, etc.)..."
+              class="w-full bg-[#FAF6EE] border border-[#D9CDB9] rounded-xl px-4 py-3 text-base text-marron-800 placeholder-marron-500/60 focus:outline-none focus:ring-2 focus:ring-bosque-700 focus:bg-white transition-all resize-y"
+            ></textarea>
+          </div>
+
+          <!-- Botón de envío -->
+          <div>
+            <button
+              type="submit"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-bosque-700 hover:bg-bosque-800 text-white font-semibold text-base shadow-sm hover:shadow transition-all cursor-pointer"
+            >
+              <span>Enviar mi mensaje a Vicky</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m22 2-7 20-4-9-9-4Z" />
+                <path d="M22 2 11 13" />
+              </svg>
+            </button>
+          </div>
+
+          <p class="text-xs text-marron-500 flex items-center gap-1.5 pt-2">
+            <span>🔒</span> Tus datos quedan únicamente entre nosotros dos y te
+            respondo yo misma a la brevedad.
+          </p>
+        </form>
+
+        <!-- Mensaje de confirmación en pantalla -->
+        <div
+          id="mensajeExito"
+          class="hidden mt-6 p-6 bg-bosque-50 border border-bosque-200 rounded-2xl text-center"
+        >
+          <span
+            class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-bosque-100 text-bosque-800 text-2xl mb-3"
+          >
+            🌱
+          </span>
+          <h3 class="text-lg font-bold text-bosque-800 mb-1">
+            ¡Mensaje recibido!
+          </h3>
+          <p class="text-sm text-marron-700 max-w-md mx-auto">
+            Muchas gracias por escribirme. Me tomo el tiempo de leer cada
+            consulta y te voy a estar respondiendo pronto para coordinar nuestro
+            encuentro.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de página humilde y cálido -->
+    <footer
+      class="w-full border-t border-[#EAE1D2] py-8 mt-auto text-center text-xs text-marron-500 bg-[#FAF6EE]"
+    >
+      <div class="max-w-3xl mx-auto px-5 space-y-1">
+        <p class="font-medium text-marron-700">
+          Espacio de educación y acompañamiento digital • Hecho en Argentina con
+          paciencia
+        </p>
+        <p>Sin fines de lucro. 100% libre y gratuito.</p>
+      </div>
+    </footer>
+
+    <script>
+      function enviarFormulario(event) {
+        event.preventDefault();
+
+        const form = document.getElementById("formularioContacto");
+        const mensajeExito = document.getElementById("mensajeExito");
+
+        // Animación suave de confirmación
+        form.classList.add("opacity-40", "pointer-events-none");
+
+        setTimeout(() => {
+          form.classList.add("hidden");
+          mensajeExito.classList.remove("hidden");
+          mensajeExito.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }, 500);
+      }
+    </script>
+  </body>
 </html>
