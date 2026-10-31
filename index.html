@@ -1,10 +1,88 @@
 <!doctype html>
 <html lang="es">
   <head>
+    <!-- Metadatos técnicos básicos -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Título y Descripción optimizados para SEO y CTR -->
+    <title>Vicky • Aprendé tecnología sin miedo y a tu ritmo</title>
+    <meta
+      name="description"
+      content="Espacio gratuito y seguro para perderle el miedo a la tecnología. Aprendé a usar el celular, la computadora e internet a tu propio ritmo junto a Vicky."
+    />
+    <meta name="author" content="Victoria Sanjurjo (Vicky)" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#FAF6EE" />
+
+    <!-- Verificación de Google Search Console -->
     <meta name="google-site-verification" content="7YTvjDwc5V6fWUJpZPI3X-pbBrEVTOV07piPaKh-Vps" />
-    <title>Vicky • Tecnología sin miedo</title>
+
+    <!-- URL Canónica -->
+    <link rel="canonical" href="https://tudominio.com/" />
+
+    <!-- Open Graph (Facebook, WhatsApp, Telegram, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:url" content="https://tudominio.com/" />
+    <meta property="og:site_name" content="Vicky • Tecnología sin miedo" />
+    <meta property="og:title" content="Vicky • Aprendé tecnología sin miedo y a tu ritmo" />
+    <meta
+      property="og:description"
+      content="Espacio gratuito y seguro para perderle el miedo a la tecnología. Aprendé a usar el celular, la computadora e internet a tu propio ritmo junto a Vicky."
+    />
+    <meta property="og:image" content="https://tudominio.com/assets/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://tudominio.com/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Vicky • Tecnología sin miedo - Espacio de acompañamiento digital gratuito" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Vicky • Aprendé tecnología sin miedo y a tu ritmo" />
+    <meta
+      name="twitter:description"
+      content="Espacio gratuito y seguro para perderle el miedo a la tecnología. Aprendé a usar el celular, la computadora e internet a tu propio ritmo junto a Vicky."
+    />
+    <meta name="twitter:image" content="https://tudominio.com/assets/og-image.jpg" />
+
+    <!-- Datos estructurados JSON-LD (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://tudominio.com/#website",
+          "url": "https://tudominio.com/",
+          "name": "Vicky • Tecnología sin miedo",
+          "description": "Espacio comunitario y gratuito para aprender a usar la tecnología con paciencia y a tu propio ritmo.",
+          "inLanguage": "es"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://tudominio.com/#vicky",
+          "name": "Victoria Sanjurjo",
+          "alternateName": "Vicky",
+          "jobTitle": "Desarrolladora de Software y Educadora Digital",
+          "description": "Joven argentina que promueve el aprendizaje autónomo y acompaña de forma gratuita y humana a quienes desean perderle el miedo a la tecnología.",
+          "url": "https://tudominio.com/"
+        },
+        {
+          "@type": "EducationalOccupationalProgram",
+          "@id": "https://tudominio.com/#programa-acompanamiento",
+          "name": "Acompañamiento digital humano y sin miedo",
+          "description": "Espacio de orientación personalizada para aprender a usar celulares, computadoras, trámites en línea, programación inicial e inteligencia artificial.",
+          "provider": {
+            "@id": "https://tudominio.com/#vicky"
+          },
+          "isAccessibleForFree": true,
+          "inLanguage": "es"
+        }
+      ]
+    }
+    </script>
 
     <!-- Tailwind CSS para el layout base y utilidades responsive -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -89,6 +167,8 @@
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
+              aria-hidden="true"
+              focusable="false"
             >
               <path
                 d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"
@@ -206,6 +286,7 @@
         class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14"
         aria-label="Nuestros pilares"
       >
+        <h2 class="sr-only">Nuestros pilares de acompañamiento</h2>
         <div
           class="bg-[#FDFCF9] border border-[#EAE1D2] rounded-2xl p-5 text-center sm:text-left flex flex-col justify-between"
         >
@@ -317,6 +398,7 @@
               id="nombre"
               name="name"
               required
+              autocomplete="name"
               placeholder="Por ejemplo: Marta o Carlos"
               class="w-full bg-[#FAF6EE] border border-[#D9CDB9] rounded-xl px-4 py-3 text-base text-marron-800 placeholder-marron-500/60 focus:outline-none focus:ring-2 focus:ring-bosque-700 focus:bg-white transition-all"
             />
@@ -404,6 +486,7 @@
               id="contacto_dato"
               name="email"
               required
+              autocomplete="email"
               placeholder="Ejemplo: tu-email@gmail.com o tu número de WhatsApp"
               class="w-full bg-[#FAF6EE] border border-[#D9CDB9] rounded-xl px-4 py-3 text-base text-marron-800 placeholder-marron-500/60 focus:outline-none focus:ring-2 focus:ring-bosque-700 focus:bg-white transition-all"
             />
@@ -443,6 +526,8 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
               >
                 <path d="m22 2-7 20-4-9-9-4Z" />
                 <path d="M22 2 11 13" />

@@ -1,0 +1,6 @@
+# robots.txt para https://tudominio.com/
+User-agent: *
+Allow: /
+
+# Declaración del Sitemap
+Sitemap: https://tudominio.com/sitemap.xml
