@@ -1,186 +1,40 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
-    <!-- Metadatos técnicos básicos -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- Título y Descripción -->
-    <title>Mi rincón de programadora</title>
+    <title>My Coding Corner • Vicky</title>
     <meta
       name="description"
-      content="Mi rincón de programadora. Un espacio donde comparto lo que sé y lo que voy aprendiendo de programación de manera autodidacta."
+      content="Hi, I'm Vicky. This is a space where I share what I know and what I'm learning about programming."
     />
     <meta name="author" content="Vicky" />
-    <meta
-      name="robots"
-      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-    />
     <meta name="theme-color" content="#FAF6EE" />
-
-    <!-- Verificación de Google Search Console -->
-    <meta
-      name="google-site-verification"
-      content="7YTvjDwc5V6fWUJpZPI3X-pbBrEVTOV07piPaKh-Vps"
-    />
-
-    <!-- URL Canónica -->
-    <link rel="canonical" href="https://aprender-con-vicky.vercel.app/" />
-
-    <!-- Open Graph (Facebook, WhatsApp, Telegram, LinkedIn) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_AR" />
-    <meta property="og:url" content="https://aprender-con-vicky.vercel.app/" />
-    <meta property="og:site_name" content="Mi rincón de programadora" />
-    <meta property="og:title" content="Mi rincón de programadora" />
-    <meta
-      property="og:description"
-      content="Un espacio donde comparto lo que sé y lo que voy aprendiendo de programación de manera autodidacta."
-    />
-    <meta
-      property="og:image"
-      content="https://aprender-con-vicky.vercel.app/assets/og-image.jpg"
-    />
-    <meta
-      property="og:image:secure_url"
-      content="https://aprender-con-vicky.vercel.app/assets/og-image.jpg"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="Mi rincón de programadora - Vicky"
-    />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Mi rincón de programadora" />
-    <meta
-      name="twitter:description"
-      content="Un espacio donde comparto lo que sé y lo que voy aprendiendo de programación de manera autodidacta."
-    />
-    <meta
-      name="twitter:image"
-      content="https://aprender-con-vicky.vercel.app/assets/og-image.jpg"
-    />
-
-    <!-- Datos estructurados JSON-LD (Schema.org) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "WebSite",
-            "@id": "https://aprender-con-vicky.vercel.app/#website",
-            "url": "https://aprender-con-vicky.vercel.app/",
-            "name": "Mi rincón de programadora",
-            "description": "Espacio donde comparto lo que sé y lo que voy aprendiendo de programación.",
-            "inLanguage": "es"
-          },
-          {
-            "@type": "Person",
-            "@id": "https://aprender-con-vicky.vercel.app/#vicky",
-            "name": "Vicky",
-            "jobTitle": "Programadora",
-            "description": "Persona que aprende de manera autodidacta y comparte su camino en la programación.",
-            "url": "https://aprender-con-vicky.vercel.app/"
-          }
-        ]
-      }
-    </script>
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Estilos complementarios -->
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-
-  <body
-    class="bg-[#FAF6EE] text-[#4D3F35] font-sans antialiased min-h-screen flex flex-col selection:bg-[#C7D9CE] selection:text-[#234434]"
-  >
-    <!-- Barra superior -->
-    <header
-      class="w-full border-b border-[#EAE1D2] bg-[#FAF6EE]/90 sticky top-0 z-20 backdrop-blur-sm"
-    >
-      <div
-        class="max-w-3xl mx-auto px-5 py-4 flex items-center justify-between"
-      >
-        <div class="flex items-center gap-2.5">
-          <!-- Ícono sutil de hoja / crecimiento -->
-          <span
-            class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#E2ECE5] text-[#2E5A44]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-4 h-4"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <path
-                d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"
-              />
-              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
-            </svg>
-          </span>
-          <span class="font-bold text-lg text-[#3D3128] tracking-tight"
-            >Mi rincón de programadora</span
-          >
-        </div>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <span class="site-icon" aria-hidden="true">🌱</span>
+        <span class="site-title">My Coding Corner</span>
       </div>
     </header>
 
-    <!-- Contenedor central -->
-    <main class="flex-grow w-full max-w-3xl mx-auto px-5 py-10 md:py-16">
-      <!-- Carta de presentación de Vicky -->
-      <article
-        class="bg-[#FDFCF9] border border-[#EAE1D2] rounded-3xl p-7 md:p-12 shadow-sm"
-      >
-        <h1
-          class="text-2xl sm:text-3xl md:text-4xl font-serif text-[#3D3128] font-semibold leading-tight mb-8"
-        >
-          Hola, soy Vicky
-        </h1>
-
-        <!-- Cuerpo del mensaje -->
-        <div
-          class="space-y-6 text-base sm:text-lg text-[#4D3F35] leading-relaxed font-sans"
-        >
-          <p>
-            Este es un espacio donde voy a compartir lo que sé y lo que voy
-            aprendiendo de programación.
-          </p>
-
-          <p>
-            No soy docente, solo soy una persona que aprende de manera
-            autodidacta los temas que le interesan y si por alguna razón te
-            cruzaste con esta página, bienvenido o bienvenida.
-          </p>
-
-          <p>
-            Simplemente acá comparto lo que voy aprendiendo y las cosas que me
-            gustan.
-          </p>
-        </div>
+    <!-- Main Content -->
+    <main class="main-wrapper">
+      <article class="intro-card">
+        <h1>Hi, I'm Vicky</h1>
+        <p>
+          This is a space where I share what I know and what I'm learning about
+          programming.
+        </p>
       </article>
     </main>
 
-    <!-- Pie de página -->
-    <footer
-      class="w-full border-t border-[#EAE1D2] py-8 mt-auto text-center text-xs text-[#7E6B5D] bg-[#FAF6EE]"
-    >
-      <div class="max-w-3xl mx-auto px-5 space-y-1">
-        <p class="font-medium text-[#4D3F35]">
-          Mi rincón de programadora
-        </p>
-      </div>
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>My Coding Corner</p>
     </footer>
   </body>
 </html>
