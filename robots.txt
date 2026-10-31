@@ -1,6 +1,0 @@
-# robots.txt para https://aprender-con-vicky.vercel.app/
-User-agent: *
-Allow: /
-
-# Declaración del Sitemap
-Sitemap: https://aprender-con-vicky.vercel.app/sitemap.xml
