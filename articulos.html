@@ -28,62 +28,11 @@
     />
     <meta property="og:image" content="https://aprender-con-vicky.vercel.app/assets/og-image.jpg" />
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS y configuración de tema -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="styles.css" />
 
-    <!-- Tipografía Inter y Lora -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap"
-      rel="stylesheet"
-    />
-
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              arena: {
-                50: "#FDFCF9",
-                100: "#FAF6EE",
-                200: "#F4EFE4",
-                300: "#EAE1D2",
-                400: "#D9CDB9",
-              },
-              marron: {
-                800: "#3D3128",
-                700: "#4D3F35",
-                600: "#655447",
-                500: "#7E6B5D",
-              },
-              bosque: {
-                50: "#F2F7F4",
-                100: "#E2ECE5",
-                200: "#C7D9CE",
-                600: "#3D6F55",
-                700: "#2E5A44",
-                800: "#234434",
-              },
-            },
-            fontFamily: {
-              sans: ['"Plus Jakarta Sans"', "sans-serif"],
-              serif: ['"Source Serif 4"', "Georgia", "serif"],
-            },
-          },
-        },
-      };
-    </script>
-
-    <style>
-      ::selection {
-        background-color: #c7d9ce;
-        color: #234434;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
   </head>
 
   <body
@@ -537,108 +486,7 @@
       </div>
     </footer>
 
-    <!-- Lógica de filtrado y búsqueda interactiva -->
-    <script>
-      (function () {
-        const buscador = document.getElementById("buscadorArticulos");
-        const filtroSelect = document.getElementById("filtroCategoria");
-        const pills = document.querySelectorAll(".pill-cat");
-        const articulos = document.querySelectorAll(".tarjeta-articulo");
-        const grilla = document.getElementById("grillaArticulos");
-        const estadoVacio = document.getElementById("estadoVacio");
-        const contador = document.getElementById("contadorResultados");
-        const btnLimpiar = document.getElementById("btnLimpiarFiltros");
-
-        let categoriaActual = "todas";
-        let textoBusqueda = "";
-
-        function normalizarTexto(texto) {
-          return texto
-            .toLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
-        }
-
-        function aplicarFiltros() {
-          let visibles = 0;
-          const query = normalizarTexto(textoBusqueda.trim());
-
-          articulos.forEach((articulo) => {
-            const cat = articulo.getAttribute("data-categoria");
-            const titulo = normalizarTexto(articulo.getAttribute("data-titulo") || "");
-            const desc = normalizarTexto(articulo.getAttribute("data-descripcion") || "");
-
-            const coincideCategoria =
-              categoriaActual === "todas" || cat === categoriaActual;
-
-            const coincideBusqueda =
-              query === "" || titulo.includes(query) || desc.includes(query);
-
-            if (coincideCategoria && coincideBusqueda) {
-              articulo.classList.remove("hidden");
-              visibles++;
-            } else {
-              articulo.classList.add("hidden");
-            }
-          });
-
-          // Actualizar contador y estado vacío
-          if (visibles === 0) {
-            grilla.classList.add("hidden");
-            estadoVacio.classList.remove("hidden");
-            contador.textContent = "No hay resultados para esta búsqueda";
-          } else {
-            grilla.classList.remove("hidden");
-            estadoVacio.classList.remove("hidden");
-            estadoVacio.classList.add("hidden");
-            contador.textContent = `Mostrando ${visibles} artículo${visibles === 1 ? "" : "s"}`;
-          }
-
-          // Sincronizar pastillas visuales
-          pills.forEach((pill) => {
-            if (pill.getAttribute("data-cat") === categoriaActual) {
-              pill.classList.remove("bg-arena-200", "text-marron-700");
-              pill.classList.add("bg-bosque-700", "text-white");
-            } else {
-              pill.classList.remove("bg-bosque-700", "text-white");
-              pill.classList.add("bg-arena-200", "text-marron-700");
-            }
-          });
-
-          // Sincronizar select
-          if (filtroSelect.value !== categoriaActual) {
-            filtroSelect.value = categoriaActual;
-          }
-        }
-
-        // Eventos
-        buscador.addEventListener("input", function (e) {
-          textoBusqueda = e.target.value;
-          aplicarFiltros();
-        });
-
-        filtroSelect.addEventListener("change", function (e) {
-          categoriaActual = e.target.value;
-          aplicarFiltros();
-        });
-
-        pills.forEach((pill) => {
-          pill.addEventListener("click", function () {
-            categoriaActual = this.getAttribute("data-cat");
-            aplicarFiltros();
-          });
-        });
-
-        btnLimpiar.addEventListener("click", function () {
-          textoBusqueda = "";
-          categoriaActual = "todas";
-          buscador.value = "";
-          filtroSelect.value = "todas";
-          aplicarFiltros();
-        });
-
-        aplicarFiltros();
-      })();
-    </script>
+    <!-- Lógica de filtrado y búsqueda de artículos -->
+    <script src="articulos.js"></script>
   </body>
 </html>
