@@ -331,14 +331,6 @@ ul {
   margin-top: auto;
 }
 
-/* ---------- Subpágina del combo: acciones dentro de tarjetas ---------- */
-.card__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-1);
-  margin-top: auto;
-}
-
 /* ---------- Servicios ---------- */
 .services-list {
   display: grid;
