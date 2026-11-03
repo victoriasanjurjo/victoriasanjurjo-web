@@ -6,263 +6,375 @@
   <title>Código & Fierros — Victoria Sanjurjo</title>
   <style>
     :root {
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --border: #e2e8f0;
-      --border-focus: #94a3b8;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --accent: #2563eb;
-      --accent-soft: #eff6ff;
-      --tag-bg: #f1f5f9;
-      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --bg: #f9f6f0;
+      --card-bg: #fffdfa;
+      --border: #e8ded2;
+      --border-soft: #f2eae0;
+      --text-main: #2b231d;
+      --text-muted: #6e6155;
+      --text-faint: #8f8174;
+      --accent: #b85429;
+      --accent-soft: #fbf0e6;
+      --accent-hover: #9c3f17;
+      --tag-bg: #f2ece2;
+      --font-serif: "Charter", "Georgia", "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Monaco, Consolas, monospace;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      background: var(--bg);
+      background-color: var(--bg);
       color: var(--text-main);
       font-family: var(--font-sans);
-      line-height: 1.6;
+      line-height: 1.7;
       padding: 0 1.25rem 4rem;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 840px;
+      max-width: 720px;
       margin: 0 auto;
     }
 
-    /* Cabecera Principal */
+    /* Cabecera del Blog */
     header {
       padding: 4.5rem 0 2rem;
       border-bottom: 1px solid var(--border);
     }
-    .brand-tagline {
+
+    .blog-tagline {
       font-family: var(--font-mono);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--accent);
-      background: var(--accent-soft);
-      padding: 0.3rem 0.7rem;
+      background-color: var(--accent-soft);
+      padding: 0.25rem 0.65rem;
       border-radius: 4px;
       display: inline-block;
-      margin-bottom: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.03em;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.02em;
     }
+
     h1 {
-      font-size: 2.5rem;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.2rem;
-    }
-    .author-subtitle {
-      font-size: 1.15rem;
-      font-weight: 500;
+      font-family: var(--font-serif);
+      font-size: 2.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
       color: var(--text-main);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.35rem;
     }
-    .bio {
+
+    .author-note {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .intro-paragraph {
       font-size: 1.05rem;
       color: var(--text-muted);
-      margin-bottom: 1.5rem;
-      max-width: 720px;
+      line-height: 1.75;
+      max-width: 680px;
     }
-    .links-bar {
+
+    /* Navegación sutil */
+    .blog-nav {
+      margin-top: 1.75rem;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-    .btn-link {
+      gap: 1.5rem;
       font-family: var(--font-mono);
       font-size: 0.85rem;
-      text-decoration: none;
-      color: var(--text-main);
-      border: 1px solid var(--border);
-      padding: 0.4rem 0.85rem;
-      border-radius: 6px;
-      background: var(--card-bg);
-      transition: all 0.15s ease;
+      border-top: 1px dashed var(--border);
+      padding-top: 1rem;
     }
-    .btn-link:hover {
-      border-color: var(--accent);
+
+    .blog-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .blog-nav a:hover {
       color: var(--accent);
     }
 
-    /* Pilares */
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-      margin: 2.5rem 0;
-    }
-    .pillar-box {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.25rem;
-      border-top: 3px solid var(--accent);
-    }
-    .pillar-box h2 {
-      font-size: 1rem;
-      font-family: var(--font-mono);
-      margin-bottom: 0.4rem;
-      color: var(--text-main);
-    }
-    .pillar-box p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.5;
+    /* Secciones del Blog */
+    section {
+      margin-top: 3.25rem;
     }
 
-    /* Hub: Desarrollo y Divulgación */
-    .hub-section {
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-faint);
+      font-weight: normal;
+    }
+
+    /* Lista de Entradas */
+    .posts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+    }
+
+    .post-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 2rem;
-      margin-bottom: 3.5rem;
+      padding: 1.5rem 1.65rem;
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      display: block;
     }
-    .section-head {
-      margin-bottom: 1.25rem;
+
+    .post-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(43, 35, 29, 0.04);
     }
-    .section-head h2 {
-      font-size: 1.4rem;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.3rem;
+
+    .post-meta {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-faint);
+      margin-bottom: 0.45rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
     }
-    .section-head p {
+
+    .post-tag {
+      background: var(--tag-bg);
       color: var(--text-muted);
-      font-size: 0.95rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
     }
-    .hub-grid {
+
+    .post-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.35;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-excerpt {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Notas del Taller */
+    .notes-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.25rem;
-      margin-top: 1.25rem;
-    }
-    @media (max-width: 650px) {
-      .hub-grid { grid-template-columns: 1fr; }
-    }
-    .hub-card {
-      display: block;
-      text-decoration: none;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.5rem;
-      color: inherit;
-      transition: all 0.2s ease;
-    }
-    .hub-card:hover {
-      border-color: var(--border-focus);
-      transform: translateY(-2px);
-    }
-    .hub-card-type {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.4rem;
-      display: block;
-    }
-    .hub-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 0.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .hub-card p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.5;
     }
 
+    @media (max-width: 620px) {
+      .notes-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .note-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.35rem 1.45rem;
+      border-top: 3px solid var(--accent);
+    }
+
+    .note-box h3 {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      margin-bottom: 0.45rem;
+      color: var(--text-main);
+    }
+
+    .note-box p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Bloque 'Sobre este espacio' */
+    .about-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem;
+    }
+
+    .about-box p {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .about-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Pie de página cálido */
     footer {
       border-top: 1px solid var(--border);
-      padding-top: 2rem;
+      margin-top: 4.5rem;
+      padding-top: 2.25rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
+      font-size: 0.88rem;
     }
-    .footer-contact {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
+
+    .footer-note {
       color: var(--text-muted);
     }
+
     .footer-contact a {
-      color: var(--text-main);
-      text-decoration: none;
-      margin-left: 0.5rem;
-    }
-    .footer-contact a:hover {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
       color: var(--accent);
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <span class="brand-tagline">Desarrollo de Software | Divulgación</span>
+      <span class="blog-tagline">Cuaderno de código, notas y taller</span>
       <h1>Código & Fierros</h1>
-      <div class="author-subtitle">Victoria Sanjurjo</div>
-      <p class="bio">
-        Banco de trabajo de desarrollo de software autónomo, herramientas de escritorio y notas abiertas sobre arquitectura de sistemas, terminal y código.
+      <div class="author-note">Victoria Sanjurjo</div>
+      <p class="intro-paragraph">
+        Un rincón personal dedicado a escribir y experimentar con software sobrio: herramientas de escritorio livianas, programación en bajo nivel, notas sobre arquitectura de sistemas y lecturas sobre tecnología.
       </p>
 
-      <div class="links-bar">
-        <a href="https://youtube.com" target="_blank" class="btn-link">YouTube</a>
-        <a href="https://bsky.app" target="_blank" class="btn-link">Bluesky</a>
-        <a href="https://github.com" target="_blank" class="btn-link">GitHub</a>
-      </div>
+      <nav class="blog-nav">
+        <a href="#entradas">Escritos</a>
+        <a href="#taller">Apuntes de taller</a>
+        <a href="#sobre-este-espacio">Sobre mí</a>
+      </nav>
     </header>
 
-    <!-- Pilares -->
-    <div class="pillars-grid">
-      <div class="pillar-box">
-        <h2>01. Desarrollo Autónomo</h2>
-        <p>Herramientas de escritorio y terminal hechas a medida: livianas, sin cuentas obligatorias, sin telemetría y sin suscripciones forzadas.</p>
-      </div>
-      <div class="pillar-box">
-        <h2>02. Filosofía Local-First</h2>
-        <p>Software diseñado para funcionar offline, priorizando la privacidad del usuario, el rendimiento real y la independencia tecnológica.</p>
-      </div>
-      <div class="pillar-box">
-        <h2>03. Divulgación Técnica</h2>
-        <p>Documentación transparente del proceso: notas técnicas, tutoriales de programación en bajo nivel y bitácora de proyectos.</p>
-      </div>
-    </div>
-
-    <!-- Hub: Desarrollo y Divulgación -->
-    <section class="hub-section">
-      <div class="section-head">
-        <h2>Taller Digital</h2>
-        <p>Espacio para explorar las herramientas construidas y los artículos técnicos publicados.</p>
+    <!-- 1. Ensayos y Escritos -->
+    <section id="entradas">
+      <div class="section-title">
+        <h2>Escritos y reflexiones</h2>
+        <span class="section-subtitle">Notas de aprendizaje y arquitectura</span>
       </div>
 
-      <div class="hub-grid">
-        <a href="herramientas.html" class="hub-card">
-          <span class="hub-card-type">Desarrollo Propio & Software Autónomo</span>
-          <h3>Catálogo de Herramientas <span>→</span></h3>
-          <p>Índice completo de aplicaciones de escritorio, utilidades de terminal en C, generadores y herramientas autónomas sin telemetría ni registros.</p>
-        </a>
+      <div class="posts-list">
+        <article class="post-card">
+          <div class="post-meta">
+            <time>Octubre 2026</time>
+            <span>·</span>
+            <span class="post-tag">#arquitectura</span>
+            <span class="post-tag">#local-first</span>
+          </div>
+          <h3 class="post-title">Software que perdure: la tranquilidad del modelo local-first</h3>
+          <p class="post-excerpt">
+            Por qué prefiero construir herramientas que funcionen de manera autónoma en la máquina del usuario, sin depender de servidores ajenos, registros obligatorios ni telemetría invasiva.
+          </p>
+        </article>
 
-        <a href="articulos.html" class="hub-card">
-          <span class="hub-card-type">Divulgación & Aprendizaje</span>
-          <h3>Artículos y Guías <span>→</span></h3>
-          <p>Publicaciones sobre programación de bajo nivel, uso eficiente de la terminal, arquitectura local-first, buenas prácticas y bitácora técnica de desarrollo.</p>
-        </a>
+        <article class="post-card">
+          <div class="post-meta">
+            <time>Septiembre 2026</time>
+            <span>·</span>
+            <span class="post-tag">#terminal</span>
+            <span class="post-tag">#lenguaje-c</span>
+          </div>
+          <h3 class="post-title">La calma de la terminal y los programas que caben en la cabeza</h3>
+          <p class="post-excerpt">
+            Notas prácticas sobre escribir utilidades en C y scripts concisos. La simplicidad como mecanismo para comprender exactamente qué está haciendo cada ciclo de procesador y memoria.
+          </p>
+        </article>
+
+        <article class="post-card">
+          <div class="post-meta">
+            <time>Agosto 2026</time>
+            <span>·</span>
+            <span class="post-tag">#web-personal</span>
+            <span class="post-tag">#artesanía</span>
+          </div>
+          <h3 class="post-title">Cultivar un jardín digital en lugar de alimentar plataformas</h3>
+          <p class="post-excerpt">
+            El valor de conservar un sitio web personal en HTML estático: un espacio pausado donde publicar a ritmo propio, sin el ruido constante de los algoritmos ni métricas de retención.
+          </p>
+        </article>
       </div>
     </section>
 
+    <!-- 2. Apuntes de Taller -->
+    <section id="taller">
+      <div class="section-title">
+        <h2>Apuntes de taller</h2>
+        <span class="section-subtitle">Proyectos cotidianos y principios</span>
+      </div>
+
+      <div class="notes-grid">
+        <div class="note-box">
+          <h3>Herramientas autónomas</h3>
+          <p>
+            Construcción de aplicaciones de escritorio y utilidades de consola pensadas para resolver tareas concretas: livianas, estables y sin suscripciones.
+          </p>
+        </div>
+
+        <div class="note-box">
+          <h3>Simplicidad técnica</h3>
+          <p>
+            Elección de tecnologías maduras, almacenamiento en formatos abiertos y diseño modular que respeta los recursos de la máquina y la atención del usuario.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Sobre este espacio -->
+    <section id="sobre-este-espacio">
+      <div class="section-title">
+        <h2>Sobre mí</h2>
+        <span class="section-subtitle">Victoria Sanjurjo</span>
+      </div>
+
+      <div class="about-box">
+        <p>
+          Soy Victoria Sanjurjo y vivo en Quilmes, Buenos Aires. Me dedico a escribir código y explorar la computación personal desde un enfoque pausado y artesanal.
+        </p>
+        <p>
+          Este cuaderno es mi banco de trabajo digital: aquí reúno mis notas sobre programación, experimentos con interfaces minimalistas y reflexiones sobre cómo construir software que respete a quienes lo usan.
+        </p>
+      </div>
+    </section>
+
+    <!-- Pie de página -->
     <footer>
-      <div>
-        <p style="font-size: 0.9rem; font-weight: 500;">Victoria Sanjurjo — Código & Fierros</p>
-        <p style="font-size: 0.8rem; color: var(--text-muted);">Quilmes, Buenos Aires — Desarrollo de Software · Divulgación Técnica</p>
+      <div class="footer-note">
+        <p><strong>Victoria Sanjurjo</strong> — Código & Fierros</p>
+        <p style="font-size: 0.8rem; color: var(--text-faint);">Quilmes, Buenos Aires · Cuaderno personal y notas de programación</p>
       </div>
       <div class="footer-contact">
         <a href="mailto:vicky.sanjurjo.isla@gmail.com">vicky.sanjurjo.isla@gmail.com</a>
