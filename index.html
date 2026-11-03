@@ -1,411 +1,273 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Código & Fierros — Victoria Sanjurjo</title>
-  <style>
-    :root {
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --border: #e2e8f0;
-      --border-focus: #94a3b8;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --accent: #2563eb;
-      --accent-soft: #eff6ff;
-      --tag-bg: #f1f5f9;
-      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: var(--bg);
-      color: var(--text-main);
-      font-family: var(--font-sans);
-      line-height: 1.6;
-      padding: 0 1.25rem 4rem;
-    }
-
-    .container {
-      max-width: 840px;
-      margin: 0 auto;
-    }
-
-    /* Cabecera Principal */
-    header {
-      padding: 4.5rem 0 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .brand-tagline {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--accent);
-      background: var(--accent-soft);
-      padding: 0.3rem 0.7rem;
-      border-radius: 4px;
-      display: inline-block;
-      margin-bottom: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-    }
-    h1 {
-      font-size: 2.5rem;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.2rem;
-    }
-    .author-subtitle {
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: var(--text-main);
-      margin-bottom: 0.8rem;
-    }
-    .bio {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-      max-width: 720px;
-    }
-    .links-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-    .btn-link {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      text-decoration: none;
-      color: var(--text-main);
-      border: 1px solid var(--border);
-      padding: 0.4rem 0.85rem;
-      border-radius: 6px;
-      background: var(--card-bg);
-      transition: all 0.15s ease;
-    }
-    .btn-link:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    /* Pilares */
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
-      margin: 2.5rem 0;
-    }
-    .pillar-box {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.25rem;
-      border-top: 3px solid var(--accent);
-    }
-    .pillar-box h2 {
-      font-size: 1rem;
-      font-family: var(--font-mono);
-      margin-bottom: 0.4rem;
-      color: var(--text-main);
-    }
-    .pillar-box p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* 1. Servicios de Programación Freelance */
-    .service-section {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
-    }
-    .section-head {
-      margin-bottom: 1.25rem;
-    }
-    .section-head h2 {
-      font-size: 1.4rem;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.3rem;
-    }
-    .section-head p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    .services-list {
-      list-style: none;
-      margin: 1.5rem 0 2rem;
-      padding: 0;
-      border-top: 1px solid var(--border);
-    }
-    .service-bullet {
-      position: relative;
-      padding: 1rem 0 1rem 1.75rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .service-bullet::before {
-      content: "•";
-      position: absolute;
-      left: 0.25rem;
-      top: 0.9rem;
-      color: var(--accent);
-      font-size: 1.3rem;
-      line-height: 1;
-    }
-    .service-bullet strong {
-      display: inline-block;
-      font-size: 1rem;
-      color: var(--text-main);
-      margin-right: 0.35rem;
-    }
-    .service-bullet span {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-
-    /* Bloque de Contacto Directo */
-    .contact-box {
-      background: var(--accent-soft);
-      border: 1px solid #dbeafe;
-      padding: 1.25rem 1.5rem;
-      border-radius: 6px;
-    }
-    .contact-box-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-main);
-      margin-bottom: 0.4rem;
-    }
-    .contact-box-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-    .contact-details {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.95rem;
-    }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .contact-label {
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .contact-value {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .contact-value:hover {
-      text-decoration: underline;
-    }
-
-    /* 2. Hub: Desarrollo y Divulgación */
-    .hub-section {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 2rem;
-      margin-bottom: 3.5rem;
-    }
-    .hub-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-      margin-top: 1.25rem;
-    }
-    @media (max-width: 650px) {
-      .hub-grid { grid-template-columns: 1fr; }
-    }
-    .hub-card {
-      display: block;
-      text-decoration: none;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.5rem;
-      color: inherit;
-      transition: all 0.2s ease;
-    }
-    .hub-card:hover {
-      border-color: var(--border-focus);
-      transform: translateY(-2px);
-    }
-    .hub-card-type {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.4rem;
-      display: block;
-    }
-    .hub-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 0.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .hub-card p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding-top: 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .footer-contact {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-    .footer-contact a {
-      color: var(--text-main);
-      text-decoration: none;
-      margin-left: 0.5rem;
-    }
-    .footer-contact a:hover {
-      color: var(--accent);
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header>
-      <span class="brand-tagline">Programación Freelance | Desarrollo de Software | Divulgación</span>
-      <h1>Código & Fierros</h1>
-      <div class="author-subtitle">Victoria Sanjurjo</div>
-      <p class="bio">
-        Desarrollo de software autónomo, servicios de programación freelance y notas abiertas sobre arquitectura de sistemas, código y tecnología.
-      </p>
-
-      <div class="links-bar">
-        <a href="https://patreon.com" target="_blank" class="btn-link">Patreon</a>
-        <a href="https://youtube.com" target="_blank" class="btn-link">YouTube</a>
-        <a href="https://bsky.app" target="_blank" class="btn-link">Bluesky</a>
-        <a href="https://discord.gg" target="_blank" class="btn-link">Discord</a>
-        <a href="https://github.com" target="_blank" class="btn-link">GitHub</a>
-      </div>
-    </header>
-
-    <!-- Pilares -->
-    <div class="pillars-grid">
-      <div class="pillar-box">
-        <h2>01. Servicios Freelance</h2>
-        <p>Desarrollo a medida: aplicaciones de escritorio, automatizaciones, scripts y herramientas adaptadas a los objetivos de tu proyecto.</p>
-      </div>
-      <div class="pillar-box">
-        <h2>02. Desarrollo Propio</h2>
-        <p>Herramientas de escritorio y terminal hechas a medida: livianas, sin cuentas obligatorias, sin telemetría y sin suscripciones forzadas.</p>
-      </div>
-      <div class="pillar-box">
-        <h2>03. Divulgación</h2>
-        <p>Documentación transparente del proceso: notas técnicas, tutoriales de programación en bajo nivel y arquitectura de software.</p>
-      </div>
-    </div>
-
-    <!-- SECCIÓN 1: SERVICIOS DE PROGRAMACIÓN FREELANCE -->
-    <section class="service-section">
-      <div class="section-head">
-        <h2>Servicios de Programación Freelance</h2>
-        <p>Soluciones de software a medida, automatización y herramientas personalizadas para tus necesidades:</p>
-      </div>
-
-      <ul class="services-list">
-        <li class="service-bullet">
-          <strong>Desarrollo de software y utilidades a medida:</strong>
-          <span>Aplicaciones de escritorio nativas, utilidades de terminal y sistemas eficientes enfocados en rendimiento, robustez y control total del usuario (Python, C, JavaScript).</span>
-        </li>
-        <li class="service-bullet">
-          <strong>Automatización y scripting de tareas:</strong>
-          <span>Creación de scripts para optimizar tareas repetitivas, integración de APIs, sincronización y flujos de trabajo autónomos sin dependencias excesivas.</span>
-        </li>
-        <li class="service-bullet">
-          <strong>Procesamiento y rescate de datos:</strong>
-          <span>Limpieza, migración de estructuras y formatos, validación de integridad y generación automatizada de reportes sin intermediarios en la nube.</span>
-        </li>
-        <li class="service-bullet">
-          <strong>Desarrollo web y paneles de control:</strong>
-          <span>Sitios web rápidos, dashboards limpios e interfaces web funcionales adaptadas a las metas de tu negocio o producto.</span>
-        </li>
-        <li class="service-bullet">
-          <strong>Refactorización y mantenimiento de código:</strong>
-          <span>Depuración de errores, modernización de bases de código legadas, optimización de velocidad y buenas prácticas de arquitectura de software.</span>
-        </li>
-      </ul>
-
-      <!-- Contacto Directo Visible -->
-      <div class="contact-box">
-        <div class="contact-box-title">¿Tenés un proyecto o idea en mente?</div>
-        <div class="contact-box-desc">
-          Contactame por correo electrónico o WhatsApp para coordinar una videollamada, conversar sobre tu proyecto y acordar un presupuesto personalizado:
-        </div>
-        
-        <div class="contact-details">
-          <div class="contact-item">
-            <span class="contact-label">Correo:</span>
-            <a href="mailto:vicky.sanjurjo.isla@gmail.com" class="contact-value">vicky.sanjurjo.isla@gmail.com</a>
-          </div>
-          <div class="contact-item">
-            <span class="contact-label">WhatsApp:</span>
-            <a href="https://wa.me/5491170743652" target="_blank" rel="noopener noreferrer" class="contact-value">11 7074 3652</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN 2: DESARROLLO Y DIVULGACIÓN (HUB) -->
-    <section class="hub-section">
-      <div class="section-head">
-        <h2>Taller Digital</h2>
-        <p>Espacio para explorar las herramientas construidas y los artículos técnicos publicados.</p>
-      </div>
-
-      <div class="hub-grid">
-        <a href="herramientas.html" class="hub-card">
-          <span class="hub-card-type">Desarrollo Propio & Freelance</span>
-          <h3>Catálogo de Herramientas <span>→</span></h3>
-          <p>Índice completo de aplicaciones de escritorio, utilidades de terminal en C, generadores y herramientas autónomas sin telemetría ni registros.</p>
-        </a>
-
-        <a href="articulos.html" class="hub-card">
-          <span class="hub-card-type">Divulgación & Aprendizaje</span>
-          <h3>Artículos y Guías <span>→</span></h3>
-          <p>Publicaciones sobre programación de bajo nivel, uso eficiente de la terminal, arquitectura local-first, buenas prácticas y bitácora técnica de desarrollo.</p>
-        </a>
-      </div>
-    </section>
-
-    <footer>
-      <div>
-        <p style="font-size: 0.9rem; font-weight: 500;">Victoria Sanjurjo — Código & Fierros</p>
-        <p style="font-size: 0.8rem; color: var(--text-muted);">Quilmes, Buenos Aires — Programación Freelance · Desarrollo · Divulgación</p>
-      </div>
-      <div class="footer-contact">
-        <a href="mailto:vicky.sanjurjo.isla@gmail.com">vicky.sanjurjo.isla@gmail.com</a> | 
-        <a href="https://wa.me/5491170743652" target="_blank" rel="noopener noreferrer">WhatsApp: 11 7074 3652</a>
-      </div>
-    </footer>
-  </div>
-</body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Código & Fierros — Victoria Sanjurjo</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+      --border-focus: #94a3b8;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+      --tag-bg: #f1f5f9;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding: 0 1.25rem 4rem;
+    }
+
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    /* Cabecera Principal */
+    header {
+      padding: 4.5rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand-tagline {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    h1 {
+      font-size: 2.5rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.2rem;
+    }
+    .author-subtitle {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+    }
+    .bio {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      max-width: 720px;
+    }
+    .links-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .btn-link {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      background: var(--card-bg);
+      transition: all 0.15s ease;
+    }
+    .btn-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Pilares */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+    .pillar-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      border-top: 3px solid var(--accent);
+    }
+    .pillar-box h2 {
+      font-size: 1rem;
+      font-family: var(--font-mono);
+      margin-bottom: 0.4rem;
+      color: var(--text-main);
+    }
+    .pillar-box p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Hub: Desarrollo y Divulgación */
+    .hub-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 3.5rem;
+    }
+    .section-head {
+      margin-bottom: 1.25rem;
+    }
+    .section-head h2 {
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+    }
+    .section-head p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+    @media (max-width: 650px) {
+      .hub-grid { grid-template-columns: 1fr; }
+    }
+    .hub-card {
+      display: block;
+      text-decoration: none;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+      color: inherit;
+      transition: all 0.2s ease;
+    }
+    .hub-card:hover {
+      border-color: var(--border-focus);
+      transform: translateY(-2px);
+    }
+    .hub-card-type {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+    .hub-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hub-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-contact {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .footer-contact a {
+      color: var(--text-main);
+      text-decoration: none;
+      margin-left: 0.5rem;
+    }
+    .footer-contact a:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="brand-tagline">Desarrollo de Software | Divulgación</span>
+      <h1>Código & Fierros</h1>
+      <div class="author-subtitle">Victoria Sanjurjo</div>
+      <p class="bio">
+        Banco de trabajo de desarrollo de software autónomo, herramientas de escritorio y notas abiertas sobre arquitectura de sistemas, terminal y código.
+      </p>
+
+      <div class="links-bar">
+        <a href="https://youtube.com" target="_blank" class="btn-link">YouTube</a>
+        <a href="https://bsky.app" target="_blank" class="btn-link">Bluesky</a>
+        <a href="https://github.com" target="_blank" class="btn-link">GitHub</a>
+      </div>
+    </header>
+
+    <!-- Pilares -->
+    <div class="pillars-grid">
+      <div class="pillar-box">
+        <h2>01. Desarrollo Autónomo</h2>
+        <p>Herramientas de escritorio y terminal hechas a medida: livianas, sin cuentas obligatorias, sin telemetría y sin suscripciones forzadas.</p>
+      </div>
+      <div class="pillar-box">
+        <h2>02. Filosofía Local-First</h2>
+        <p>Software diseñado para funcionar offline, priorizando la privacidad del usuario, el rendimiento real y la independencia tecnológica.</p>
+      </div>
+      <div class="pillar-box">
+        <h2>03. Divulgación Técnica</h2>
+        <p>Documentación transparente del proceso: notas técnicas, tutoriales de programación en bajo nivel y bitácora de proyectos.</p>
+      </div>
+    </div>
+
+    <!-- Hub: Desarrollo y Divulgación -->
+    <section class="hub-section">
+      <div class="section-head">
+        <h2>Taller Digital</h2>
+        <p>Espacio para explorar las herramientas construidas y los artículos técnicos publicados.</p>
+      </div>
+
+      <div class="hub-grid">
+        <a href="herramientas.html" class="hub-card">
+          <span class="hub-card-type">Desarrollo Propio & Software Autónomo</span>
+          <h3>Catálogo de Herramientas <span>→</span></h3>
+          <p>Índice completo de aplicaciones de escritorio, utilidades de terminal en C, generadores y herramientas autónomas sin telemetría ni registros.</p>
+        </a>
+
+        <a href="articulos.html" class="hub-card">
+          <span class="hub-card-type">Divulgación & Aprendizaje</span>
+          <h3>Artículos y Guías <span>→</span></h3>
+          <p>Publicaciones sobre programación de bajo nivel, uso eficiente de la terminal, arquitectura local-first, buenas prácticas y bitácora técnica de desarrollo.</p>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <p style="font-size: 0.9rem; font-weight: 500;">Victoria Sanjurjo — Código & Fierros</p>
+        <p style="font-size: 0.8rem; color: var(--text-muted);">Quilmes, Buenos Aires — Desarrollo de Software · Divulgación Técnica</p>
+      </div>
+      <div class="footer-contact">
+        <a href="mailto:vicky.sanjurjo.isla@gmail.com">vicky.sanjurjo.isla@gmail.com</a>
+      </div>
+    </footer>
+  </div>
+</body>
 </html>
